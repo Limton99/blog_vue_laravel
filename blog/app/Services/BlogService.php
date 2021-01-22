@@ -10,4 +10,5 @@ interface BlogService
     public function store(Request $request);
     public function update(Request $request, $id);
     public function destroy($id);
+    public function search(Request $request);
 }

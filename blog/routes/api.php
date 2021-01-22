@@ -39,13 +39,13 @@ Route::group(['prefix'=>'comments'], function () {
 });
 
 Route::group(['prefix'=>'blogs'], function () {
-    Route::get('/', [BlogApiController::class, 'index']);
+    Route::get('/all', [BlogApiController::class, 'index']);
     Route::get('/{id}', [BlogApiController::class, 'show']);
 });
 
 Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix'=>'blogs'], function () {
-        Route::get('/', [BlogApiController::class, 'index']);
+        Route::post('/store', [BlogApiController::class, 'store']);
         Route::patch('/update/{id}', [BlogApiController::class, 'update']);
         Route::delete('/delete/{id}', [BlogApiController::class, 'destroy']);
     });
@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::patch('/update/{id}', [CommentApiController::class, 'update']);
         Route::delete('/delete/{id}', [CommentApiController::class, 'destroy']);
     });
+    Route::post('user', [AuthApiController::class, 'checkUser']);
     Route::post('logout', [AuthApiController::class, 'logout']);
 });
 

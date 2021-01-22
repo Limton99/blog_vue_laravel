@@ -28,6 +28,10 @@ class AuthApiController extends Controller
 
     }
 
+    public function checkUser(Request $request) {
+        return response($this->authService->checkUser($request));
+    }
+
     public function logout() {
         return response($this->authService->logout());
     }

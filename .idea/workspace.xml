@@ -4,13 +4,25 @@
     <list default="true" id="d59493be-ba2c-4e7e-9eb9-40ab8f6d5859" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/blog_front/src/api/auth.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/api/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_front/src/api/blogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_front/src/components/Title.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/components/layout/Footer.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/components/layout/Header.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/helpers/persistanceStorage.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/helpers/utils.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/store/modules/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_front/src/store/modules/blogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_front/src/views/Blog.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/views/auth/Login.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog_front/src/views/auth/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/Api/V1/AuthApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/Api/V1/AuthApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Services/AuthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Services/AuthService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Services/BlogService.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Services/BlogService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Services/Impl/AuthServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Services/Impl/AuthServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Services/Impl/BlogServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Services/Impl/BlogServiceImpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_front" beforeDir="false" afterPath="$PROJECT_DIR$/blog_front" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_front/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_front/public/img/icons/android-chrome-192x192.png" beforeDir="false" />
@@ -232,7 +244,8 @@
       <workItem from="1610960282395" duration="4026000" />
       <workItem from="1610964548968" duration="11331000" />
       <workItem from="1611116521913" duration="2578000" />
-      <workItem from="1611122958220" duration="16004000" />
+      <workItem from="1611122958220" duration="16797000" />
+      <workItem from="1611200047117" duration="21811000" />
     </task>
     <servers />
   </component>
@@ -249,5 +262,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

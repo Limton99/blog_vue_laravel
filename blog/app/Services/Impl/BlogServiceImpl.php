@@ -80,4 +80,12 @@ class BlogServiceImpl implements BlogService
 
         return Blog::with('tags', 'categories', 'user')->get();
     }
+
+    public function search(Request $request)
+    {
+        $blogs = Blog::with('tags', 'user', 'categories')
+            ->where('title', $request->get('search'))->get();
+
+        return $blogs;
+    }
 }

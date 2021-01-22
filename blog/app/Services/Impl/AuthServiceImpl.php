@@ -64,6 +64,10 @@ class AuthServiceImpl implements AuthService
             ];
     }
 
+    public function checkUser(Request $request) {
+        return User::findOrFail($request->id);
+    }
+
     public function logout()
     {
         if (Auth::check()) {
