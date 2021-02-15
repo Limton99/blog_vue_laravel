@@ -21,6 +21,6 @@ class Category extends Model
      * @return BelongsToMany
      */
     public function blogs() {
-        return $this->belongsToMany(Blog::class, 'user_tags');
+        return $this->belongsToMany(Blog::class, 'user_categories');
     }
 }

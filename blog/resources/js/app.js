@@ -4,6 +4,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import router from "./src/router";
+import store from "./src/store";
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
+
+
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -13,14 +21,14 @@ window.Vue = require('vue').default;
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/Client.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('app', require('./src/App.vue').default);
+Vue.use(VueMaterial);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +37,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router,
+    store
 });

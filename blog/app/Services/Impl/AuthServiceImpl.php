@@ -2,6 +2,7 @@
 namespace App\Services\Impl;
 
 
+use App\Models\Roles;
 use App\Models\User;
 use App\Services\AuthService;
 use Illuminate\Http\Request;
@@ -23,8 +24,13 @@ class AuthServiceImpl implements AuthService
 
             $token = $user->createToken($user->email.'-'.now());
 
+
+//            dd(DB::table('user_roles')->where('role_id', 1)->get());
+//            dd(User::with('roles')->findOrFail($user->id));
+
             return [
                 'user'=>$user,
+                'isAdmin'=>$user->isAdmin(),
                 'token'=>$token
             ];
         }
@@ -53,19 +59,26 @@ class AuthServiceImpl implements AuthService
 
         DB::table("user_roles")->insert([
             'user_id'=>$user->id,
-            'role_id'=>2
+            'roles_id'=>2
         ]);
 
         $token = $user->createToken($user->email.'-'.now());
 
+//        dd($user->isAdmin());
         return [
             'user'=>$user,
+            'isAdmin'=>$user->isAdmin(),
             'token'=>$token
             ];
     }
 
     public function checkUser(Request $request) {
-        return User::findOrFail($request->id);
+        $user = User::findOrFail($request->id);
+        $isAdmin = $user->isAdmin();
+        return [
+            'user'=>$user,
+            'isAdmin'=>$isAdmin
+        ];
     }
 
     public function logout()

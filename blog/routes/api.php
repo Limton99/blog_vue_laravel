@@ -55,8 +55,9 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::patch('/update/{id}', [CommentApiController::class, 'update']);
         Route::delete('/delete/{id}', [CommentApiController::class, 'destroy']);
     });
-    Route::post('user', [AuthApiController::class, 'checkUser']);
-    Route::post('logout', [AuthApiController::class, 'logout']);
+//    Route::get('/check', [AuthApiController::class, 'checkUser']);
+    Route::post('/check', [AuthApiController::class, 'checkUser']);
+    Route::post('/logout', [AuthApiController::class, 'logout']);
 });
 
 Route::group(['middleware' => ['auth:api', 'admin']], function () {

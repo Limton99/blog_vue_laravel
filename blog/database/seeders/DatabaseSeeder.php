@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('user_roles')->insert([
             'user_id' => 1,
-            'role_id' => 1,
+            'roles_id' => 1,
         ]);
         $this->call(TagsCategorySeeder::class);
     }

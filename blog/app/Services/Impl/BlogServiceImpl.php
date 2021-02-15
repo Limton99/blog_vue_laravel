@@ -22,6 +22,8 @@ class BlogServiceImpl implements BlogService
         $blog = Blog::with('tags', 'categories', 'user')->findOrFail($id);
         $blog->views+=1;
 
+        $blog->save();
+
         return $blog;
     }
 
@@ -31,9 +33,9 @@ class BlogServiceImpl implements BlogService
             $imageName = time().'.'.$request->image->extension();
 
             $request->image->move(public_path('images'), $imageName);
-//            dd($imageName);
+
             $blog = new Blog();
-//            dd(Auth::id());
+
             $blog->title = $request->title;
             $blog->description = $request->description;
             $blog->image = '/images/'.$imageName;
@@ -84,7 +86,7 @@ class BlogServiceImpl implements BlogService
     public function search(Request $request)
     {
         $blogs = Blog::with('tags', 'user', 'categories')
-            ->where('title', $request->get('search'))->get();
+            ->where('title',$request->get('search'))->get();
 
         return $blogs;
     }
